@@ -1,0 +1,162 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://CaviarDreams.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://camino_act1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://conclucion1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://camino_act3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://camino_act4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://cuadro_de_texto (2).png" type="Texture" id=6]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasLayer
+
+export (PackedScene) var camino_act1
+export (PackedScene) var conclucion
+export (PackedScene) var camino_act3
+export (PackedScene) var camino_act4
+
+func _ready():
+	pass
+
+func act1():
+	get_tree().change_scene_to(camino_act1)
+
+func act2():
+	get_tree().change_scene_to(conclucion)
+
+
+func camino_act3():
+	get_tree().change_scene_to(camino_act3)
+
+
+func _on_act4_pressed():
+	get_tree().change_scene_to(camino_act4)
+"
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="decisiones1" type="CanvasLayer"]
+layer = 3
+script = SubResource( 1 )
+camino_act1 = ExtResource( 2 )
+conclucion = ExtResource( 3 )
+camino_act3 = ExtResource( 4 )
+camino_act4 = ExtResource( 5 )
+
+[node name="cuadro_de_texto (2)" type="Sprite" parent="."]
+position = Vector2( 925, 850 )
+scale = Vector2( 1.4, 1 )
+texture = ExtResource( 6 )
+region_rect = Rect2( -96.369, 0, 96.369, 117.626 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="texto1" type="Label" parent="."]
+anchor_left = 0.046
+anchor_top = 0.756
+anchor_right = 0.046
+anchor_bottom = 0.756
+margin_left = -3.31999
+margin_top = -16.4799
+margin_right = 935.68
+margin_bottom = 19.5201
+custom_fonts/font = SubResource( 2 )
+text = "jose estaba bocetando en su tabla de dibujo ¿que deberia hacer?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.271
+anchor_top = 0.868
+anchor_right = 0.271
+anchor_bottom = 0.868
+margin_left = -391.32
+margin_top = -95.4401
+margin_right = -111.32
+margin_bottom = 84.5599
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="act1" type="Button" parent="VBoxContainer"]
+margin_right = 259.0
+margin_bottom = 42.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.662745, 0.662745, 0.662745, 1 )
+text = "seguir bocetando"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="act2" type="Button" parent="VBoxContainer"]
+margin_top = 46.0
+margin_right = 274.0
+margin_bottom = 88.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.662745, 0.662745, 0.662745, 1 )
+button_mask = 7
+text = "llamar a mis amigos"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="act3" type="Button" parent="VBoxContainer"]
+margin_top = 92.0
+margin_right = 280.0
+margin_bottom = 134.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.662745, 0.662745, 0.662745, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+button_mask = 7
+text = "llamar a juan deigo"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="act4" type="Button" parent="VBoxContainer"]
+margin_top = 138.0
+margin_right = 198.0
+margin_bottom = 180.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.662745, 0.662745, 0.662745, 1 )
+button_mask = 7
+text = "llamar a julian"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/act1" to="." method="act1"]
+[connection signal="pressed" from="VBoxContainer/act2" to="." method="act2"]
+[connection signal="pressed" from="VBoxContainer/act3" to="." method="camino_act3"]
+[connection signal="pressed" from="VBoxContainer/act4" to="." method="_on_act4_pressed"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://cuadro_de_texto (2).png" type="Texture" id=6]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasLayer
+"
+
+[node name="decisiones1" type="CanvasLayer"]
+layer = 3
+script = SubResource( 1 )
+
+[node name="cuadro_de_texto (2)" type="Sprite" parent="."]
+position = Vector2( 925, 850 )
+scale = Vector2( 1.4, 1 )
+texture = ExtResource( 6 )
+region_rect = Rect2( -96.369, 0, 96.369, 117.626 )
+__meta__ = {
+"_edit_lock_": true
+}

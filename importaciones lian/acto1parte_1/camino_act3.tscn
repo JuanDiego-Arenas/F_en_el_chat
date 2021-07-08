@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://CaviarDreams.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://conclucion1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://camino_act3.gd" type="Script" id=3]
+[ext_resource path="res://cuadro_de_texto (2).png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[node name="camino_act3" type="CanvasLayer"]
+script = ExtResource( 3 )
+conclucion = ExtResource( 2 )
+
+[node name="cuadro_de_texto (2)" type="Sprite" parent="."]
+position = Vector2( 925, 850 )
+scale = Vector2( 1.4, 1 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button1" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nombre" type="Label" parent="."]
+anchor_left = 0.052
+anchor_top = 0.657
+anchor_right = 0.052
+anchor_bottom = 0.657
+margin_left = -19.84
+margin_top = -21.5599
+margin_right = 141.16
+margin_bottom = 14.4401
+custom_fonts/font = SubResource( 1 )
+text = "Juan Diego:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="."]
+anchor_left = 2.737
+anchor_top = 5.032
+anchor_right = 2.737
+anchor_bottom = 5.032
+margin_left = -5170.04
+margin_top = -4634.56
+margin_right = -4276.04
+margin_bottom = -4520.56
+custom_fonts/font = SubResource( 2 )
+text = "hola amigo, acabo de aprender un nuevo lenguaje
+de programacion, estoy emocionado, me llevo algo de tiempo
+aprenderlo pero vale mucho la pena..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 2.737
+anchor_top = 5.032
+anchor_right = 2.737
+anchor_bottom = 5.032
+margin_left = -5170.04
+margin_top = -4634.56
+margin_right = -4573.04
+margin_bottom = -4598.56
+custom_fonts/font = SubResource( 2 )
+text = "oiga vamos a llamar a julian para contarle "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="conclucion"]
+[connection signal="pressed" from="Button1" to="." method="_on_Button1"]

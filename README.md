@@ -1,4 +1,4 @@
-#Novela Visual
+# Novela Visual
 
 Este es un proyecto indie que relata la vida de "Jose" uno de los creadores del juego, donde no sabe si hacer un juego de una novela visual
 
